@@ -1,0 +1,12 @@
+Audio prompt: bae_pangram2.wav
+Text prompt: Sphinx of black quartz, judge my vow.
+
+Synthesized text: 
+output: Sphinx of black quartz, judge my vow.
+output2: With tenure, Suzie'd have all the more leisure for yachting, but her publications are no good.
+output3: Are those shy Eurasian footwear, cowboy chaps, or jolly earthmoving headgear.
+output4: The quick brown fox jumps over the lazy dog.
+
+Language: English
+
+Accent: no-accent
