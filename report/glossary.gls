@@ -1,0 +1,51 @@
+\newabbreviation
+{dnn}
+{DNN}{deep neural networks}
+
+\newabbreviation
+{hmm}
+{HMM}{hidden Markov model}
+
+\newabbreviation
+{ai}
+{AI}{artificial intelligence}
+
+\newabbreviation
+{tts}
+{TTS}{text-to-speech}
+
+\newabbreviation
+{spss}
+{SPSS}{statistical parametric speech synthesis}
+
+\newabbreviation
+{mcc}
+{MCC}{mel cepstral coefficients}
+
+\newabbreviation
+{f0}
+{F0}{fundamental frequency}
+
+\newabbreviation
+{bap}
+{BAP}{band-aperiodicity}
+
+\newabbreviation
+{rnn}
+{RNN}{recurrent neural network}
+
+\newabbreviation
+{cnn}
+{CNN}{convolutional neural network}
+
+\newabbreviation
+{gan}
+{GAN}{generative adversarial network}
+
+\newabbreviation
+{vae}
+{VAE}{variational auto-encoder}
+
+\newabbreviation
+{ddpm}
+{DDPM}{diffusion probabilistic model}
