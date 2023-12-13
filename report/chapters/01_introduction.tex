@@ -3,11 +3,41 @@
 
 \subsection{Initial Situation}
 
-Ut molestiae nesciunt tenetur. Veritatis odio aliquid omnis porro neque et. Sit autem dolorum blanditiis aut cupiditate qui.
-Voluptate in dolore error consequatur rerum enim velit. Magnam tenetur sunt voluptatem et placeat rerum. Ea error repellat doloribus rerum qui sapiente numquam. Culpa laboriosam quia illum iure sit pariatur eum. Quos qui animi occaecati nesciunt repellendus molestiae commodi. Dolor nam ullam debitis dolorem quam.
+Modern speech synthesis started in the 1960s, it began with huge databases of recorded speech that were cut into words and afterwards stitched back together during synthesizing. String of words were then reduced down to the individual diphones, which minimized the size of the databases significantly. In later years there was a statistical approach using a \gls{hmm}, where waveforms are formed based on probability. With the rapid expansion in the field of \gls{dnn} in the past years, voice generation based on \gls{ai} improved immensely as well.
+These open-source implementations show great promise 
+% TODO: short list of all technologies we want to introduce in chapter 2
+.
+Due to the big differences in implementations of speech synthesis and the subsequent voice conversion we focused on \gls{tts} synthesis and not on
+% TODO: short list of disqualified technologies (singing voice synthesis, etc.)
+.
+
+More and more successful \gls{ai} voice scams have been reported % TODO: source needed
+undeniably because of the increasingly realistic spoofed voice attacks. % real word?
+Impersonation attacks over phone calls can become even easier and identity verification protocols based on voice id will soon be unfeasible. This puts great importance on raising awareness of the capabilities of such attacks and technologies to further improve possible detection or defense strategies and if these render futile, the deprecation of such security systems.
+
 
 \subsection{Objective of this work}
+The research question and objectives of this work are based on the official assignment on the subsection \ref{offassignment}.
 
-Ducimus quos eius eos. Quo a et architecto ut ex illum doloremque. Eum ipsa totam voluptates consequatur est nulla. Nemo consequatur non blanditiis tenetur dolor numquam rerum laudantium. Sed non sit non quaerat.
-Consequatur enim possimus repellat unde ipsa. In commodi impedit dignissimos quae laborum. Animi dolores neque sed. Et ea facere eaque consectetur ut.
-Voluptatem enim eius corporis sit voluptate architecto. Dolorem vel placeat quia consequatur voluptates eaque corrupti ex. Omnis et saepe id voluptatem nisi. Voluptatum velit autem perspiciatis consequatur sint.
+The primary research question guiding this thesis is:
+what is the current state of the art in voice generation, with a particular focus on the quality, ease of use, the potential limitations and risks of open source software implementations? 
+
+To address the research question effectively, the following objectives have been defined:
+\begin{itemize}
+    \item Review state of the art for voice generation techniques:
+    \begin{itemize}
+        \item conduct an extensive search of literature on voice generation, focusing on recent developments in the field.
+        \item Systematically classify identified voice generation techniques based on their underlying technologies. 
+    \end{itemize}
+    \item Select and evaluate most recent open source implementations:
+    \begin{itemize}
+        \item compare the different open source implementations subjectively and objectively through qualitative tests. 
+        \item Compare the most recent software against an outdated solution highlighting improvements in recent implementations.
+    \end{itemize}
+    \item Analyze the potential limitations and risks:
+    \begin{itemize}
+        \item subjectively assess usability and ease of use, considering installation, intuitiveness of the user interface and accessibility of documentation.
+        \item Examine robustness and stability of the implementations, by testing it under potential stress conditions, such as low-quality audio of the voice to be cloned.
+        \item Test the synthesised voice on different voice authentication systems to assess its ability to pass authentication checks.
+    \end{itemize}
+\end{itemize}
