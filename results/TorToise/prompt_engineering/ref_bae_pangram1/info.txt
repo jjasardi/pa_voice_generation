@@ -1,0 +1,3 @@
+reference audio clips: bae_pangram2.wav
+
+text prompt: [I am so angry,] Sphinx of black quartz, judge my vow.

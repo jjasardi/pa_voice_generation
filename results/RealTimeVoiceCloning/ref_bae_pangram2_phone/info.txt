@@ -1,0 +1,2 @@
+reference clip: bae_pangram2_phone.wav
+generation time: 10 s

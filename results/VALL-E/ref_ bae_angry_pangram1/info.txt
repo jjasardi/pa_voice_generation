@@ -1,0 +1,7 @@
+Audio prompt: bae_angry_pangram1.wav
+
+Language: English
+
+Accent: no-accent
+
+synthesis time: 170 seconds

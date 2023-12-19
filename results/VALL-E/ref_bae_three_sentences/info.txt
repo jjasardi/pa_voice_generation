@@ -1,0 +1,10 @@
+Audio prompt: bae_three_sentences.wav
+
+Language: English
+
+Accent: no-accent
+
+synthesized_pangram2 330 seconds
+synthesized_phoneme_pangram2.wav 360 seconds
+synthesized_phoneme_pangram1.wav 340 seconds
+synthesized_pangram1.wav 350 seconds

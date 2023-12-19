@@ -1,0 +1,6 @@
+pangram1: The quick brown fox jumps over the lazy dog.
+pangram2: Sphinx of black quartz, judge my vow.
+phoneme_pangram1: Are those shy Eurasian footwear, cowboy chaps, or jolly earthmoving headgear.
+phoneme_pangram2: With tenure, Suzie'd have all the more leisure for yachting, but her publications are no good.
+
+three_sentences: Are those shy Eurasian footwear, cowboy chaps, or jolly earthmoving headgear. The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.

@@ -1,0 +1,10 @@
+Audio prompt: bae_pangram2_phone.wav
+
+Language: English
+
+Accent: no-accent
+
+synthesized_pangram2 170 seconds
+synthesized_phoneme_pangram2.wav 220 seconds
+synthesized_phoneme_pangram1.wav 220 seconds
+synthesized_pangram1.wav 180 seconds

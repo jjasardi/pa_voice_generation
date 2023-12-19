@@ -1,0 +1,2 @@
+reference clip: bae_pangram2.wav
+generation time: 10 s ca. for a synthesis

@@ -1,0 +1,2 @@
+reference clip: bae_phoneme_pangram1.wav
+generation time: 10 s ca. for a synthesis
