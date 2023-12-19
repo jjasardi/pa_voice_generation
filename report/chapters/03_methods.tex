@@ -1,5 +1,39 @@
 \newpage
-\section{Methods}
+\section{Methods} \label{methods}
 
-Ut molestiae nesciunt tenetur. Veritatis odio aliquid omnis porro neque et. Sit autem dolorum blanditiis aut cupiditate qui.
-Voluptate in dolore error consequatur rerum enim velit. Magnam tenetur sunt voluptatem et placeat rerum. Ea error repellat doloribus rerum qui sapiente numquam. Culpa laboriosam quia illum iure sit pariatur eum. Quos qui animi occaecati nesciunt repellendus molestiae commodi. Dolor nam ullam debitis dolorem quam.
+In this section we describe our methods that we used to make a preselection of different voice generation solutions and then the process where we refined the preselection.
+It first started with the introduction text from our project work description. In the description the key words are generative AI, voice generation / voice synthesis, open source implementations and machine learning / deep neural networks. Additionally there is also new report linked from CBS News \cite{cbsnews2023voice}, where CBS reports an uptick in elevated scams using cloned speech and also describes how with the new tools like Vall-E a scammer only needs 3 seconds of the targets voice to create a copy that can then be used against potential victims.
+
+\subsection{Academic Research}
+
+With the guidance of our supervisor we started with multiple surveys in scientific papers and followed all the trails that promised us new knowledge. The most helpful were "Spoofing and countermeasures for speaker verification: A survey" by Zhizheng Wu et al.\cite{wu2015spoofing} and "A survey on voice assistant security: Attacks and countermeasures" by Chen Yan et al.\cite{yan2022survey}.
+
+There are three main approaches for AI voice imitation: Voice conversion models that need an audio sample from the target voice(the voice to be imitated) and an audio recording of the target speech(the sentences to be imitated), singing voice synthesis that work similar to a voice conversion model but are more finetuned for intonation used when singing and last but not least there is the \gls{tts} synthesis that needs a target voice sample and the target speech in text format.
+
+\todo[inline]{add more interesting papers}
+
+\subsection{Github}
+
+As one focus of this paper is to find out how easy it would be for an attacker to fake the voice of a potential victim, we concentrate on open source implementations. These are commonly found on \url{https://www.github.com}. First method was searching for keywords via a search engine, some of the keywords were: "AI voice generation", "voice synthesis", "text-to-speech", "voice conversion", etc.. Finding interesting repositories it is then to evaluate them based on objective criteria. For us these criteria were:
+\begin{itemize}
+    \item \textbf{Actively maintained:} When was the latest feature merge? Is the project still in development or is it finished? How is the activity on open issues?
+    \item \textbf{Amount of stars:} Staring is the github equivalent to liking or giving a thumbs up. It is a way of adding a \gls{repo} to the users list or for showing their appreciation. Generally the more popular a \gls{repo} is the more stars it has.
+    \item \textbf{Amount of forks:} This metric can be similar to the amount of stars, but it also shows how a \gls{repo}s is established as a solution that it is trying to solve. The more forks a project has, the more it can be looked at as a standard for this specific solution.
+    \item \textbf{Available training data:} Is the training data integrated in the \gls{repo}? Are there links to tried and tested training data? Or is one expected to train the model by themselves?
+    \item \textbf{Available languages:} Does it only support English? Does it only support Chinese? Does \gls{repo} support a wide range of languages?
+    \item \textbf{Implementations of papers:} Are there any papers referenced in the \gls{repo}?
+    \item \textbf{Possible affiliation with companies/governments:} Is \gls{repo} linked to a paper that was published with the special funding of companies or governments? Is it part of a business solution that a company is offering for money?
+\end{itemize}
+
+After finding good candidates most often the \gls{repo} are well maintained and with that they ususally are correctly categorized into the appropriate topics. The connected topics are thereupon a great follow-up, if the \gls{repo} was not good enough but the topic shows promise. We identified the following topics: "spech", "text-to-speech", "deep-learning", "speech-synthesis", "voice-synthesis", "melgan", "multi-speaker-tts", "voice-cloning", "tacotron" and "vocoder".
+
+\subsection{Output Evaluation}
+
+\todo[inline]{General description, general comments(quality, duration, frequent/emerging patterns, settings used), Picture-comparison, conclusion about best sample}
+
+% explain why we used pangrams and explain each sentence
+
+%to select the open source implementations we looked at the following things: start on the github reposisory. Is there a pretrained model? Can we clone own voice? Is it still maintaned (date of last commit)? Is it new? Zero shot TTS
+
+% which sentences we used to test the open-source implementations? what metrics did we use to evaluate the results (Mean Opinion Score)? (5:Excellent, 4:Good, 3:Fair, 2:Poor, 1:Bad)
+
