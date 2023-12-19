@@ -39,19 +39,36 @@ Diffusion models in \gls{tts} operate on the principle of enhancing the quality 
 
 \subsection{Vocoder}
 
-The vocoder is the part of voice generation that takes the context from the outputs of text analysis modules and or from acoustic models, and synthesizes the actual audio, meaning waveforms that can be listened to on their preferred medium. In the focus of digital voice generation one does generally differentiate between vocoders from a signal-processing-based approach and vocoders from a neural-network-based approach.\cite{Tan2023vocoder}
+The vocoder is the part of voice generation that takes the context from the outputs of text analysis modules and or from acoustic models, and synthesizes the actual audio, meaning waveforms that can be listened to on their preferred medium. In the focus of digital voice generation one does generally differentiate between vocoders from a signal-processing-based approach and vocoders from a neural-network-based approach\cite{Tan2023vocoder}.
 
 We take a look at different neural-network based vocoders that are used in the systems we considered.
 
 \subsubsection{UnivNet}
-%% explain UnivNet because of tortoise
+
 UnivNet is a neural vocoder developed in South Korea that synthesizes high-fidelity waveforms in real time. Instead of only using band-limitied mel-spectograms, which can produce over-smoothing problems; UnivNet accepts multiple spectograms generated or real then applies a multi-resolution spectrogram discriminator. The main difference lies in the spectrograms used in UnivNet are chosen based on different spectral and temporal resolutions. Finally there is also a multi-period waveform discriminator.\cite{jang2021univnet}
 
 \subsubsection{WaveNet}
-% explain WaveNet and WaveRNN because of Real Time Voice cloning
-WaveNet is a deep neural network developed by Google. It is an audio generative model based on the PixelCNN architecture that is fully probabilistic and autoregressive. WaveNet combines causal filters with dilated convolu-
-tions to allow their receptive fields to grow exponentially with depth, which is important to model
+
+WaveNet is a deep neural network developed by Google. It is an audio generative model based on the PixelCNN architecture that is fully probabilistic and autoregressive. WaveNet combines causal filters with dilated convolutions to allow their receptive fields to grow exponentially with depth, which is important to model
 the long-range temporal dependencies in audio signals.\cite{oord2016wavenet}
 
 \subsection{Fully End-to-End TTS}
+
+Figure \ref{fig:end-to-end} shows an overview of the different modules voice generation systems can be composed and also which parts do the similar work. Even though the inputs are not the same for each process the overarching theme is still generally the same. Namely it starts from thought concepts that are written down and try to communicate a meaning within their context of application and it ends with the synthesizing of binary data to the finalized waveforms.
+Now comes the last process which incorporates all different modules into one model : a fully end-to-end \gls{tts} model.
+
+An end-to-end system tries to optimize the different shortcomings of marrying multiple single components into one system. These are:
+\begin{itemize}
+    \item Reducing human supervision of the feature alignments,
+    \item Optimising of error propagation in cascaded models,
+    \item Saving time and resources during training and deployment.
+\end{itemize}
+\cite{Tan2023fullyendtoend}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/end-to-end.PNG}
+    \caption{The progressively end-to-end process for TTS models \cite{Tan2023fullyendtoend}}
+    \label{fig:end-to-end}
+\end{figure}
 
