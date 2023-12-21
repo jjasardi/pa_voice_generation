@@ -2,40 +2,40 @@
 \section{Theoretical base}
 This section is intended to describe the key components that usually compose a \gls{tts} system. This section does not go into the details of the individual components, but rather provides the basics for understanding the later sections. For more in-depth details, the references cited in this section can be consulted.
 
-A \gls{tts} System normally consists of three components: a text analysis module, an acoustic model and a vocoder.
+A \gls{tts} system normally consists of three components: a text analysis module, an acoustic model and a vocoder.
 
 \subsection{Text Analysis Module}
 
-The text analysis module processes the input text to extract linguistic features. Traditionally in \gls{spss} this process involved text processing, phonetic analysis and prosodic analysis \cite{Tan2023textanalysis}.
+The text analysis module processes the input text to extract linguistic features. Traditionally in \gls{spss} this process involved text processing, phonetic analysis and prosodic analysis\cite{Tan2023textanalysis}.
 
 \textbf{Text processing:}
-In this phase the document structure (e.g. headings, paragraphs) is analysed to apply appropriate prosody, rhythm, and intonation to the synthetised speech \cite{Tan2023textanalysis}. Subsequently, the non-standard words in the text (e.g. dates) are converted from written form into speakable form with text normalization \cite{Tan2023textanalysis, sproat2001normalization}. Linguistic analysis then extracts semantic information from the text \cite{Tan2023textanalysis}.
+In this phase the document structure (e.g. headings, paragraphs) is analysed to apply appropriate prosody, rhythm, and intonation to the synthetised speech\cite{Tan2023textanalysis}. Subsequently, the non-standard words in the text (e.g. dates) are converted from written form into speakable form with text normalization\cite{Tan2023textanalysis, sproat2001normalization}. Linguistic analysis then extracts semantic information from the text\cite{Tan2023textanalysis}.
 
 \textbf{Phonetic analysis:}
-In phonetic analysis polyphone disambiguation is applied to distinguish the different pronunciations of the same word in different contexts. Furthermore, graphemes (sequence of characters) are converted into phonemes (sequence of pronunciation symbols), which facilitates speech synthesis \cite{Tan2023textanalysis, sun2019token}.
+In phonetic analysis polyphone disambiguation is applied to distinguish the different pronunciations of the same word in different contexts. Furthermore, graphemes (sequence of characters) are converted into phonemes (sequence of pronunciation symbols), which facilitates speech synthesis\cite{Tan2023textanalysis, sun2019token}.
 
 \textbf{Prosodic analysis:}
-Prosodic analysis analyses the rhythm, stress, and intonation of speech. This features are important for achieving naturalness in synthesized speech \cite{Tan2023textanalysis}.
+Prosodic analysis analyses the rhythm, stress, and intonation of speech. These features are important for achieving naturalness in synthesized speech\cite{Tan2023textanalysis}.
 
-In neural \gls{tts} the text analysis module is often simplified, retaining only essential steps such as text normalization and grapheme-to-phoneme conversion. This approach enables the models to take phoneme sequences directly as input for the synthesis. This is driven by the capacity of neural networks to capture internal patterns and relationships directly from raw input data \cite{Tan2023textanalysis}.
+In neural \gls{tts} the text analysis module is often simplified, retaining only essential steps such as text normalization and grapheme-to-phoneme conversion. This approach enables the models to take phoneme sequences directly as input for the synthesis. This is driven by the capacity of neural networks to capture internal patterns and relationships directly from raw input data\cite{Tan2023textanalysis}.
 
 \subsection{Acoustic Model}
-Traditionally, in \gls{spss} the acoustic model takes the linguistic features as input to generate acoustic features, such as \gls{mcc}, \gls{bap}, and \gls{f0}, that represent the frequency components of the speech signal \cite{acoustic2023models, yoshimura1999simultaneous}. Techniques such as \gls{hmm} have been employed to generate these acoustic features \cite{tokuda2013speech}. Even though \gls{hmm}-based SPSS are more flexible in changing the voice characteristics compared to concatenative speech synthesis, the naturalness of synthesized speech is compromised due to the challenge of accurately modeling the complex acoustic features \cite{zen2015acoustic}.
+Traditionally, in \gls{spss} the acoustic model takes the linguistic features as input to generate acoustic features, such as \gls{mcc}, \gls{bap}, and \gls{f0}, that represent the frequency components of the speech signal\cite{acoustic2023models, yoshimura1999simultaneous}. Techniques such as \gls{hmm} have been employed to generate these acoustic features\cite{tokuda2013speech}. Even though \gls{hmm}-based SPSS are more flexible in changing the voice characteristics compared to concatenative speech synthesis, the naturalness of synthesized speech is compromised due to the challenge of accurately modeling the complex acoustic features\cite{zen2015acoustic}.
 
-In neural \gls{tts} systems acoustic models are enhanced with \gls{dnn}. This eliminates the need for explicit alignments between linguistic and acoustic features, reducing preprocessing requirements. Furthermore, the representation of linguistic features simplifies to character or phoneme sequences, and acoustic features transition from low-dimensional representations to high-dimensional ones, such as mel-spectrograms or linear spectrograms \cite{acoustic2023models}.
+In neural \gls{tts} systems acoustic models are enhanced with \gls{dnn}s. This eliminates the need for explicit alignments between linguistic and acoustic features, reducing preprocessing requirements. Furthermore, the representation of linguistic features simplifies to character or phoneme sequences, and acoustic features transition from low-dimensional representations to high-dimensional ones, such as mel-spectrograms or linear spectrograms\cite{acoustic2023models}.
 
 Various model structures have been adopted in neural \gls{tts} acoustic models:
 
-\textbf{RNN-Based Models (e.g., Tacotron series):} The Tacotron series leverages \gls{rnn}, employing an encoder-attention-decoder framework, to generate linear-scale spectrograms from character sequences \cite{wang2017tacotron, acoustic2023models}. Tacotron 2 uses the same acoustic model as in the original Tacotron to generate the mel-spectrograms. The main difference is in the vocoder utilized: Tacotron 2 utilizes a modified WaveNet vocoder, improving audio quality in comparison to the Griffin-Lim algorithm used in Tacotron \cite{shen2018natural}.
+\textbf{RNN-Based Models (e.g., Tacotron series):} The Tacotron series leverages \gls{rnn}, employing an encoder-attention-decoder framework, to generate linear-scale spectrograms from character sequences\cite{wang2017tacotron, acoustic2023models}. Tacotron 2 uses the same acoustic model as in the original Tacotron to generate the mel-spectrograms. The main difference is in the vocoder utilized: Tacotron 2 utilizes a modified WaveNet vocoder, improving audio quality in comparison to the Griffin-Lim algorithm used in Tacotron\cite{shen2018natural}.
 
-\textbf{CNN-Based Models (e.g., DeepVoice):} DeepVoice integrates \gls{cnn} into the \gls{spss} system, emphasizing the local dependencies of speech signals. Similarly to \gls{spss}, DeepVoice predicts the \gls{f0} for the entire duration of phonemes, with the major difference that it employs \gls{cnn}s to do so \cite{arik2017deep}.
+\textbf{CNN-Based Models (e.g., DeepVoice):} DeepVoice integrates \gls{cnn} into the \gls{spss} system, emphasizing the local dependencies of speech signals. Similarly to \gls{spss}, DeepVoice predicts the \gls{f0} for the entire duration of phonemes, with the major difference that it employs \gls{cnn}s to do so\cite{arik2017deep}.
 
 \textbf{Transformer-Based Models (e.g., FastSpeech series):} %% explain also autoregressive transformer models because of tortoise 
-The previous models, which all use autoregressive generation, have limitations such as slow inference and word skipping \cite{acoustic2023models}. the FastSpeech series introduces a feed-forward Transformer network that generates mel-spectrograms in parallel, speeding up training and inference, and improving robustness \cite{ren2019fastspeech, ren2021fastspeech}.
+The previous models, which all use autoregressive generation, have limitations such as slow inference and word skipping\cite{acoustic2023models}. the FastSpeech series introduces a feed-forward Transformer network that generates mel-spectrograms in parallel, speeding up training and inference, and improving robustness\cite{ren2019fastspeech, ren2021fastspeech}.
 
 \textbf{Advanced Generative Models (GAN/Flow/VAE/Diffusion):} To handle the distributional nature of mel-spectrogram data conditioned on phoneme sequences, advanced generative models, such as \gls{gan}, normalizing flow, \gls{vae}, and diffusion model, are introduced. These models contribute to generating high-quality mel-spectrograms with fine-grained details.
 
-Diffusion models in \gls{tts} operate on the principle of enhancing the quality of the mel-spectrograms by iteratively removing noise. This denoising process necessitates a large number of iteration steps considerably slowing down inference speed \cite{acoustic2023models}.
+Diffusion models in \gls{tts} operate on the principle of enhancing the quality of the mel-spectrograms by iteratively removing noise. This denoising process necessitates a large number of iteration steps considerably slowing down inference speed\cite{acoustic2023models}.
 
 \subsection{Vocoder}
 
@@ -45,12 +45,12 @@ We take a look at different neural-network based vocoders that are used in the s
 
 \subsubsection{UnivNet}
 
-UnivNet is a neural vocoder developed in South Korea that synthesizes high-fidelity waveforms in real time. Instead of only using band-limitied mel-spectograms, which can produce over-smoothing problems; UnivNet accepts multiple spectograms generated or real then applies a multi-resolution spectrogram discriminator. The main difference lies in the spectrograms used in UnivNet are chosen based on different spectral and temporal resolutions. Finally there is also a multi-period waveform discriminator.\cite{jang2021univnet}
+UnivNet is a neural vocoder developed in South Korea that synthesizes high-fidelity waveforms in real time. Instead of only using band-limitied mel-spectograms, which can produce over-smoothing problems; UnivNet accepts multiple spectograms generated or real then applies a multi-resolution spectrogram discriminator. The main difference lies in the spectrograms used in UnivNet are chosen based on different spectral and temporal resolutions. Finally there is also a multi-period waveform discriminator\cite{jang2021univnet}.
 
 \subsubsection{WaveNet}
 
 WaveNet is a deep neural network developed by Google. It is an audio generative model based on the PixelCNN architecture that is fully probabilistic and autoregressive. WaveNet combines causal filters with dilated convolutions to allow their receptive fields to grow exponentially with depth, which is important to model
-the long-range temporal dependencies in audio signals.\cite{oord2016wavenet}
+the long-range temporal dependencies in audio signals\cite{oord2016wavenet}.
 
 \subsection{Fully End-to-End TTS}
 
@@ -68,7 +68,7 @@ An end-to-end system tries to optimize the different shortcomings of marrying mu
  \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/end-to-end.PNG}
-    \caption{The progressively end-to-end process for TTS models \cite{Tan2023fullyendtoend}}
+    \caption{The progressively end-to-end process for TTS models\cite{Tan2023fullyendtoend}}
     \label{fig:end-to-end}
 \end{figure}
 

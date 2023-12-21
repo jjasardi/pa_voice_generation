@@ -2,38 +2,53 @@
 \section{Methods} \label{methods}
 
 In this section we describe our methods that we used to make a preselection of different voice generation solutions and then the process where we refined the preselection.
-It first started with the introduction text from our project work description. In the description the key words are generative AI, voice generation / voice synthesis, open source implementations and machine learning / deep neural networks. Additionally there is also new report linked from CBS News \cite{cbsnews2023voice}, where CBS reports an uptick in elevated scams using cloned speech and also describes how with the new tools like Vall-E a scammer only needs 3 seconds of the targets voice to create a copy that can then be used against potential victims.
+It first started with the introduction text from our project work description. In the description the key words are generative AI, voice generation / voice synthesis, open source implementations and machine learning / deep neural networks. Additionally there is also a news report linked from CBS News \cite{cbsnews2023voice}, where CBS reports an uptick in elevated scams using cloned speech and also describes how with the new tools like VALL-E (X) a scammer only needs 3 seconds of the targets voice to create a copy that can then be used against potential victims.
 
 \subsection{Academic Research}
 
 With the guidance of our supervisor we started with multiple surveys in scientific papers and followed all the trails that promised us new knowledge. The most helpful were "Spoofing and countermeasures for speaker verification: A survey" by Zhizheng Wu et al.\cite{wu2015spoofing} and "A survey on voice assistant security: Attacks and countermeasures" by Chen Yan et al.\cite{yan2022survey}.
 
-There are three main approaches for AI voice imitation: Voice conversion models that need an audio sample from the target voice(the voice to be imitated) and an audio recording of the target speech(the sentences to be imitated), singing voice synthesis that work similar to a voice conversion model but are more finetuned for intonation used when singing and last but not least there is the \gls{tts} synthesis that needs a target voice sample and the target speech in text format.
+There are three main approaches for AI voice imitation: Voice conversion models that need an audio sample from the target voice(the voice to be imitated) and an audio recording of the target speech(the sentences to be imitated), singing voice synthesis that work similar to a voice conversion model but are more fine-tuned for intonation used when singing and last but not least there is the \gls{tts} synthesis that needs a target voice sample and the target speech in text format\cite{wu2015spoofing}.
 
-\todo[inline]{add more interesting papers}
-
-\subsection{Github}
+\subsection{Github} \label{github_method}
 
 As one focus of this paper is to find out how easy it would be for an attacker to fake the voice of a potential victim, we concentrate on open source implementations. These are commonly found on \url{https://www.github.com}. First method was searching for keywords via a search engine, some of the keywords were: "AI voice generation", "voice synthesis", "text-to-speech", "voice conversion", etc.. Finding interesting repositories it is then to evaluate them based on objective criteria. For us these criteria were:
+
 \begin{itemize}
     \item \textbf{Actively maintained:} When was the latest feature merge? Is the project still in development or is it finished? How is the activity on open issues?
     \item \textbf{Amount of stars:} Staring is the github equivalent to liking or giving a thumbs up. It is a way of adding a \gls{repo} to the users list or for showing their appreciation. Generally the more popular a \gls{repo} is the more stars it has.
     \item \textbf{Amount of forks:} This metric can be similar to the amount of stars, but it also shows how a \gls{repo}s is established as a solution that it is trying to solve. The more forks a project has, the more it can be looked at as a standard for this specific solution.
-    \item \textbf{Available training data:} Is the training data integrated in the \gls{repo}? Are there links to tried and tested training data? Or is one expected to train the model by themselves?
-    \item \textbf{Available languages:} Does it only support English? Does it only support Chinese? Does \gls{repo} support a wide range of languages?
+    \item \textbf{Available training data:} Is the training data integrated in the \gls{repo}? Are there links to tried and tested training data?
+    \item \textbf{Available pre-trained models:} Are there pre-trained models available for download? Is one expected to train the model by themselves?
+    \item \textbf{Available languages:} Does it only support English? Does it only support Chinese? Does a \gls{repo} support a wide range of languages?
     \item \textbf{Implementations of papers:} Are there any papers referenced in the \gls{repo}?
-    \item \textbf{Possible affiliation with companies/governments:} Is \gls{repo} linked to a paper that was published with the special funding of companies or governments? Is it part of a business solution that a company is offering for money?
+    \item \textbf{Possible affiliation with companies/governments:} Is a \gls{repo} linked to a paper that was published with the special funding of companies or governments? Is it part of a business solution that a company is offering in exchange for money?
 \end{itemize}
 
-After finding good candidates most often the \gls{repo} are well maintained and with that they ususally are correctly categorized into the appropriate topics. The connected topics are thereupon a great follow-up, if the \gls{repo} was not good enough but the topic shows promise. We identified the following topics: "spech", "text-to-speech", "deep-learning", "speech-synthesis", "voice-synthesis", "melgan", "multi-speaker-tts", "voice-cloning", "tacotron" and "vocoder".
+After finding good candidates most often the \gls{repo} are well maintained and with that, they usually are correctly categorized into the appropriate topics. The connected topics are thereupon a great follow-up, if the \gls{repo} was not good enough although the topic shows promise. We identified the following topics: "speech", "text-to-speech", "deep-learning", "speech-synthesis", "voice-synthesis", "melgan", "multi-speaker-tts", "voice-cloning", "tacotron" and "vocoder".
 
-\subsection{Output Evaluation}
+\subsection{Output Evaluation} \label{eval_method}
 
-\todo[inline]{General description, general comments(quality, duration, frequent/emerging patterns, settings used), Picture-comparison, conclusion about best sample}
+After our selection of \gls{dnn} to test, we defined a system to compare the results of each model. For the target voice input and for the target speech input pangrams and phoneme pangrams were used. Pangrams are short sentences that include all the letters from the alphabet. Since our tests were concluded in English the language for the target voice was also English. The models were evaluated using voices of unseen speakers, i.e. voices that were not used during the training of the models.
 
-% explain why we used pangrams and explain each sentence
+These were :
 
-%to select the open source implementations we looked at the following things: start on the github reposisory. Is there a pretrained model? Can we clone own voice? Is it still maintaned (date of last commit)? Is it new? Zero shot TTS
+\begin{enumerate}
+    \item \textbf{Pangram1:} The quick brown fox jumps over the lazy dog.
+    \item \textbf{Pangram2:} Sphinx of black quartz, judge my vow.
+    \item \textbf{Pangram3:} Are those shy Eurasian footwear, cowboy chaps, or jolly earth-moving headgear.
+    \item \textbf{Pangram4:} With tenure, Suzie'd have all the more leisure for yachting, but her publications are no good.
+\end{enumerate}
 
-% which sentences we used to test the open-source implementations? what metrics did we use to evaluate the results (Mean Opinion Score)? (5:Excellent, 4:Good, 3:Fair, 2:Poor, 1:Bad)
+Pangram 3 and 4 are phoneme pangrams meaning that instead of every letter, every phoneme that is used in the language, is in the sentence. The phoneme pangrams especially are a very good indicator of a \gls{dnn} that can generate speech from the ground up and is not over-trained on the most common words and phrases.
 
+To properly compare the different chosen models a system of six different criteria were defined:
+
+\begin{itemize}
+    \item Subjective description of the audio outputs: For the reason that sound is complex to be perceived by humans, a subjective description has a higher impact than an objective calculation on the output audio.
+    \item Any negative trends: Does the output audio have obvious patterns that sound robot-y, echo-y or choppy? Does one hear a difference between a recorded voice and a generated voice?
+    \item Outcomes with emotional inputs: How does the model process audio inputs that are spoken with emotions? Does it have special settings?
+    \item Visual comparison of mel-spectrogram: A comparison between the target speech recorded by the actual person and the generated voice.
+    \item Used settings of the model: Are there any settings within the model? Which settings produce better outcomes? Which settings produce indistinguishable outputs?
+    \item Generation time: What is the generation time of the output audio after the finished training of the model?
+\end{itemize}
